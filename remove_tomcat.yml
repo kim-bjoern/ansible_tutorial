@@ -1,0 +1,10 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Remove tomcat package
+    dnf:
+      name : httpd
+      state: absent
