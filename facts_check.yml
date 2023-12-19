@@ -1,0 +1,12 @@
+---
+
+- name: Check nodes
+  hosts: all
+  tasks:
+  - name: OS and OS version
+    ansible.builtin.debug:
+      msg: "{{ ansible_hostname }} is running {{ ansible_distribution }} version {{ ansible_distribution_version }}"
+
+  - name: Memory info
+    ansible.builtin.debug:
+      msg: "{{ ansible_hostname }} has {{ ansible_memory_mb.real.total }} MB of ram"
